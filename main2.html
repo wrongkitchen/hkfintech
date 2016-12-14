@@ -5,53 +5,50 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<link rel="stylesheet" type="/test/css" href="main.css">
+<link rel="stylesheet" type="css/isotope-docs.css" href="main.css">
 <script src="js/index2.js"></script>
+<script src="js/isotope-docs.min.js"></script>
+<script src="js/jquery.simplePagination.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * { box-sizing: border-box; }
 
-body { font-family: sans-serif; }
+/* force scrollbar */
+html { overflow-y: scroll; }
 
-/* ---- grid ---- */
-
-.grid {
-  background: #EEE;
-  max-width: 1200px;
+body {
+  font-family: sans-serif;
 }
 
-/* clearfix */
+/* ---- isotope ---- */
+
+.grid {
+  background: #DDD;
+}
+
+/* clear fix */
 .grid:after {
   content: '';
   display: block;
   clear: both;
 }
 
-/* ---- grid-item ---- */
+/* ---- .grid-item ---- */
 
+.grid-sizer,
 .grid-item {
-  width: 160px;
-  height: 120px;
-  float: left;
-  background: #D26;
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.5);
-  border-radius: 5px;
+  width: 33.333%;
 }
 
-.grid-item--width2 { width: 320px; }
-.grid-item--width3 { width: 480px; }
-.grid-item--width4 { width: 640px; }
+.grid-item {
+  float: left;
+}
 
-.grid-item--height2 { height: 200px; }
-.grid-item--height3 { height: 260px; }
-.grid-item--height4 { height: 360px; }
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
 
-	div div button {
-    position: absolute;
-    right: 10px;
-    top: 5px;
-	}
 </style>
 </head>
 <body>
@@ -72,35 +69,54 @@ body { font-family: sans-serif; }
 		</div>
 	</div>
 	<div class="container">
+<h1>Isotope - imagesLoaded callback</h1>
+
 <div class="grid">
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--width2 grid-item--height2"></div>
-  <div class="grid-item grid-item--height3"></div>
-  <div class="grid-item grid-item--height2"></div>
-  <div class="grid-item grid-item--width3"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--height2"></div>
-  <div class="grid-item grid-item--width2 grid-item--height3"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--height2"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--width2 grid-item--height2"></div>
-  <div class="grid-item grid-item--width2"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--height2"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--height3"></div>
-  <div class="grid-item grid-item--height2"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item"></div>
-  <div class="grid-item grid-item--height2"></div>
+  <div class="grid-sizer"></div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" />
+  </div>
+  <div class="grid-item">
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
+  </div>
 </div>
+
 </div>
 </body>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" defer></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" defer></script>
+<script>
+var $grid = $('.grid').imagesLoaded( function() {
+  $grid.isotope({
+    itemSelector: '.grid-item',
+    percentPosition: true,
+    masonry: {
+      columnWidth: '.grid-sizer'
+    }
+  });
+});
+</script>
 </html>

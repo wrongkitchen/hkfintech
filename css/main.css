@@ -28,12 +28,7 @@ div.img img {
   display: table;
   clear: both; }
 
-div div button {
-  float: right; }
 
-@media screen and (max-width: 991px) {
-  div div button {
-    float: left; } }
 
 .row > .column {
   padding: 0 8px; }
