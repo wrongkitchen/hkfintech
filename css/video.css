@@ -6,6 +6,36 @@ body {
 .container {
 	width=70%;
 }
+.video-share{ padding-left:25px; position:relative; display:inline-block; }
+.video-share:before{
+	content:" ";	
+	position:absolute; width:20px; height:20px; 
+	background-image:url(shareIcon.svg); background-size:100% auto; top:3px; left:0; 
+} 
+.video-share:hover:before{ opacity:.8; }
+a.svg {
+ position: relative;
+ display: inline-block;
+ width: 10%;
+ height: auto;
+ }
+a,a:hover {
+    color: #888888;
+	text-decoration: none;
+}
+
+a.svg:after {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left:0;
+}
+
+object {
+  width: 100%;
+}
 
 .video-LG {
     padding: 0 0px;
