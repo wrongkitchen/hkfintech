@@ -7,7 +7,7 @@ body {
 .video-share:before{
 	content:" ";	
 	position:absolute; width:20px; height:20px; 
-	background-image:url(shareIcon.svg); background-size:100% auto; top:3px; left:0; 
+	background-image:url(shareIcon.svg); background-size:100% auto; top:1px; left:0; 
 } 
 .video-share:hover:before{ opacity:.8; }
 .video-LG{ margin: 0 -8px; }

@@ -1,0 +1,340 @@
+body {
+    font-family: Arial;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.column {
+  padding: 0px 0px;
+}
+
+.portfolioFilter a { 
+    margin-right: 10px; 
+	color:#666;
+	text-decoration:none;
+}
+
+.portfolioFilter a.current { 
+    font-weight:bold;
+}
+
+img {
+	float: left;
+    margin-top:8.59px;
+	margin-right: 11.50px;
+	max-width: 100%;
+    height: auto;
+}
+
+div.text-left.date {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+div.text-left.name {
+	margin-top:15px;
+	font-size: 28px;
+	color: #00838f;
+	font-family: "Myriad pro Semibold"
+}
+
+div.text-left.descript {
+	margin-top:24.55px;
+	font-size: 14px;
+	margin-bottom:20.41px;
+}
+
+button.btn.btn-success {
+	background-color: #216c3c;
+	border-radius: 0%;
+	font-size: 14px;
+	font-weight: bold;
+	padding:8px 18px 8px 17px;
+}
+
+@media only screen and (max-width: 900px) {
+button.btn.btn-success {
+	float: left;
+	text-align: left;
+	width: 160px;
+}}
+
+div.pull-right.shareBtn {
+	color: #c5c5c6;
+}
+
+div.text-right.shareBtn:before {
+	position: relative;
+	margin-top:50px;
+	font-size: 12.69px;
+}
+
+.text-right.shareBtn{ padding-left:25px; position:relative; display:inline-block; }
+
+div.text-right.shareBtn:before {
+	content:" ";	
+	position:absolute; width:20px; height:20px; 
+	background-image:url(shareIcon.svg); background-size:100% auto; top:6px; left:480px; 
+}
+div#leftInfo.col-sm-6, div#rightInfo.col-sm-6 {
+	margin-top:49.50px;
+	margin-left: 0px;
+	margin-right: 0px;
+} {
+	margin-top:49.50px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+hr {
+	margin-top:38.50px;
+}
+
+@media only screen and (max-width: 900px) {
+div#leftInfo.col-sm-6 {
+	margin-top:19px;
+}}
+
+@media only screen and (max-width: 900px) {
+div#rightInfo.col-sm-6 {
+	margin-top:15px;
+}}
+
+@media only screen and (max-width: 900px) {
+div.text-left.date {
+	font-size: 12px;
+	font-weight: bold;
+}}
+
+@media only screen and (max-width: 900px) {
+div.text-left.name {
+	margin-top:19px;
+	font-size: 20px;
+	font-weight: bold;
+}}
+
+@media only screen and (max-width: 900px) {
+div.text-left.descript {
+	margin-top:18.71px;
+	font-size: 13.99px;
+	margin-bottom:20.41px;
+}}
+
+.isotope-item {
+    z-index: 2;
+}
+.isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
+}
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+.isotope {
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    transition-property: height, width;
+}
+.isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+a.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #27AE61 url("up-arrow.png") no-repeat center 43%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
+a.back-to-top:before {
+	content:" ";	
+	position:absolute; width:20px; height:20px; 
+	background-image:url(); 
+	background-size:100% auto; 
+	top:3px; left:0; 
+
+}
+
+@media only screen and (max-width: 500px) {
+a.simple-back-to-top {
+	font-size: 10.97px;
+	font-weight: bold;
+}}
+
+@media only screen and (min-width: 990px) {
+a.simple-back-to-top {
+	display:none;
+}}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.column img {
+	padding: 9px;
+	margin-bottom: 0x;
+}
+
+img#lightboxImg{
+	padding: 9px;	
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 50%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 250px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 55%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: -40px;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: -40px;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+#button{
+	margin-top: 10px;
+}
